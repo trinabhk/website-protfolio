@@ -171,3 +171,20 @@ footer {
     }
     html { font-size: 16px; }
 }
+
+/* Monogram Logo Micro-Interaction */
+.logo-svg {
+  transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1), filter 0.3s ease;
+  cursor: pointer;
+}
+
+/* Hover State Effects */
+.logo-svg:hover {
+  transform: scale(1.12) rotate(5deg);
+  filter: drop-shadow(0 0 8px rgba(14, 165, 160, 0.6));
+}
+
+/* Active Click Snap */
+.logo-svg:active {
+  transform: scale(0.95);
+}
