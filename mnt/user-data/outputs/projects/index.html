@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Work — Technical SEO Case Studies | Trinabh Karki</title>
+<meta name="description" content="Selected technical SEO work by Trinabh Karki: recovering indexing from Soft 404s, untangling redirect chains after migrations, and sitemap architecture for large catalogs.">
+<link rel="canonical" href="https://trinabh.com.np/projects/">
+<meta name="robots" content="index, follow">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Work — Trinabh Karki">
+<meta property="og:description" content="Selected technical SEO case studies.">
+<meta property="og:url" content="https://trinabh.com.np/projects/">
+<meta property="og:image" content="https://trinabh.com.np/profile1.jpg">
+<link rel="icon" href="/favicon.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/main.css">
+</head>
+<body>
+
+<header class="site-head">
+  <div class="wrap head-inner">
+    <a class="brand" href="/"><span class="brand-mark">T</span><span class="brand-name">Trinabh Karki<span>Technical SEO</span></span></a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/">Home</a><a href="/about/">About</a><a href="/services/">Services</a>
+      <a href="/projects/" aria-current="page">Work</a><a href="/blog/">Writing</a>
+    </nav>
+    <a class="head-cta" href="mailto:karkitrinabh30@gmail.com"><span class="dot"></span>available</a>
+    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+  </div>
+</header>
+
+<main>
+  <section class="page-head">
+    <div class="wrap">
+      <p class="eyebrow"><span class="token"><span class="slash">/</span> work</span></p>
+      <h1>A few problems worth showing.</h1>
+      <p>Representative technical SEO work, framed by the problem and the fix. Each one is the kind of issue I solve day to day.</p>
+    </div>
+  </section>
+
+  <!-- NOTE FOR TRINABH: these case studies are written truthfully
+       around the work you described, with outcomes kept qualitative.
+       Search this file for the word "metric" to find the spots where
+       you should swap in real figures from the actual project (and a
+       real client name if you are able to share one). -->
+
+  <section class="section" style="padding-top:1.5rem">
+    <div class="wrap grid" style="gap:1.4rem">
+
+      <article class="card reveal">
+        <span class="num">case 01 · 200 OK</span>
+        <h3>Recovering an e-commerce store from Soft 404s</h3>
+        <p style="margin-bottom:1rem"><strong>Context.</strong> Empty and thin category pages on a store were being treated by Google as Soft 404s — pages that return a 200 status but look like errors — so they dropped out of the index and dragged on crawl efficiency.</p>
+        <p style="margin-bottom:1rem"><strong>What I did.</strong> Audited the affected templates, added proper handling for genuinely empty categories, removed accidental <code>noindex</code> directives on pages that should rank, and corrected canonicals so Google stopped seeing duplicates.</p>
+        <p><strong>Outcome.</strong> The affected category URLs returned to a clean indexable state and re-entered the index after recrawl.
+          <!-- metric: e.g. "X category pages reindexed within Y weeks" --></p>
+        <div class="tags"><span class="tag">e-commerce</span><span class="tag">Soft 404</span><span class="tag">noindex</span><span class="tag">canonical</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="num">case 02 · 301</span>
+        <h3>Untangling a redirect chain after a migration</h3>
+        <p style="margin-bottom:1rem"><strong>Context.</strong> A site migration had left behind multi-hop redirect chains (old URL → interim URL → final URL), wasting crawl budget and diluting link signals.</p>
+        <p style="margin-bottom:1rem"><strong>What I did.</strong> Mapped every legacy URL to its correct destination, collapsed the chains into clean single-hop 301s, fixed the resulting 4xx stragglers, and updated internal links to point at final URLs directly.</p>
+        <p><strong>Outcome.</strong> Redirects resolved in a single hop and the broken-link count in Search Console fell back toward zero.
+          <!-- metric: e.g. "reduced redirect hops from N to 1 across M URLs" --></p>
+        <div class="tags"><span class="tag">migration</span><span class="tag">301 mapping</span><span class="tag">redirect chains</span><span class="tag">internal links</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="num">case 03 · XML</span>
+        <h3>Sitemap architecture for a large catalog</h3>
+        <p style="margin-bottom:1rem"><strong>Context.</strong> A large store relied on a single oversized sitemap that crawlers struggled to process, leaving newer products and posts undiscovered.</p>
+        <p style="margin-bottom:1rem"><strong>What I did.</strong> Split the monolith into a sitemap index with separate child maps for products, blog posts, and static pages, then submitted and monitored coverage in Search Console.</p>
+        <p><strong>Outcome.</strong> Crawlers could read and track each section independently, improving discovery of new URLs.
+          <!-- metric: e.g. "indexed coverage improved from X% to Y%" --></p>
+        <div class="tags"><span class="tag">sitemaps</span><span class="tag">sitemap index</span><span class="tag">crawl coverage</span></div>
+      </article>
+
+      <article class="card reveal">
+        <span class="num">case 04 · setup</span>
+        <h3>Clean Search Console foundation for a launch</h3>
+        <p style="margin-bottom:1rem"><strong>Context.</strong> A newly launched site had no verified search presence and no way to measure organic performance.</p>
+        <p style="margin-bottom:1rem"><strong>What I did.</strong> Verified the property via DNS/TXT records, submitted the sitemap so crawling began immediately, set up Bing Webmaster Tools in parallel, and connected Google Analytics for end-to-end tracking.</p>
+        <p><strong>Outcome.</strong> The site was measurable and crawlable from day one, with a verified property and a registered, error-free sitemap.
+          <!-- metric: e.g. "first pages indexed within N days of launch" --></p>
+        <div class="tags"><span class="tag">GSC verification</span><span class="tag">DNS / TXT</span><span class="tag">Bing</span><span class="tag">Analytics</span></div>
+      </article>
+
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="wrap">
+      <div class="band reveal">
+        <div>
+          <h2>Your site could be the next case study.</h2>
+          <p>If something technical is holding your rankings back, send it over — I'll tell you what I'd do first.</p>
+        </div>
+        <a class="btn btn-primary" href="mailto:karkitrinabh30@gmail.com">Let's talk <span class="arrow">↗</span></a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div><p class="foot-lead">Technical SEO that practices what it preaches — clean metadata, valid sitemaps, indexable pages.</p></div>
+      <div><h4>Pages</h4><a href="/about/">About</a><a href="/services/">Services</a><a href="/projects/">Work</a><a href="/blog/">Writing</a></div>
+      <div><h4>Contact</h4><a href="mailto:karkitrinabh30@gmail.com">karkitrinabh30@gmail.com</a><a href="/sitemap.xml">sitemap.xml</a></div>
+    </div>
+    <div class="foot-base"><span>© 2026 Trinabh Karki · Kathmandu, Nepal</span><span>200 OK · indexed, follow</span></div>
+  </div>
+</footer>
+
+<script src="/site.js"></script>
+</body>
+</html>
