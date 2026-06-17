@@ -1,5 +1,5 @@
 /* ============================================================
-   Trinabh Karki — Technical SEO Analyst
+   Trinabh Karki - Technical SEO Analyst
    Design system: the machine-readable layer made visible.
    ============================================================ */
 
@@ -13,7 +13,7 @@
   --line-soft:  #E9EAE3;  /* hairline on panels                      */
   --index:      #14794E;  /* the live / indexed / 200 accent         */
   --index-dim:  #0F5C3B;  /* darker green for text on light          */
-  --signal:     #B4471F;  /* clay — the one warning/error moment     */
+  --signal:     #B4471F;  /* clay - the one warning/error moment     */
 
   --display: "Space Grotesk", system-ui, sans-serif;
   --body:    "Inter", system-ui, sans-serif;
@@ -165,7 +165,7 @@ a { color: inherit; text-decoration: none; }
 }
 
 /* ============================================================
-   Metadata panel — the signature element
+   Metadata panel - the signature element
    ============================================================ */
 .meta-panel {
   font-family: var(--mono); font-size: .82rem; line-height: 1.85;
@@ -232,6 +232,42 @@ a { color: inherit; text-decoration: none; }
   letter-spacing: -.02em; line-height: 1.08; margin: 0 0 .9rem;
 }
 .section-head p { color: var(--ink-soft); margin: 0; }
+
+.proof-strip { padding: clamp(1.8rem, 4vw, 2.8rem) 0; }
+.proof-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+.proof-grid > div {
+  border-top: 1px solid var(--line);
+  padding-top: 1rem;
+}
+.proof-grid .num,
+.metric-note {
+  font-family: var(--mono);
+  font-size: .72rem;
+  color: var(--index-dim);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+.proof-grid strong {
+  display: block;
+  margin-top: .45rem;
+  color: var(--ink);
+  font-size: .98rem;
+  line-height: 1.5;
+}
+.metric-note {
+  display: block;
+  margin-top: .75rem;
+  line-height: 1.55;
+  text-transform: none;
+  letter-spacing: .02em;
+}
+@media (max-width: 760px) {
+  .proof-grid { grid-template-columns: 1fr; }
+}
 
 .page-head { padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(1.5rem, 4vw, 2.5rem); }
 .page-head h1 {

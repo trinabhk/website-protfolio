@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>A Technical SEO Audit Checklist I Actually Use | Trinabh Karki</title>
-<meta name="description" content="The exact order I work through a technical SEO audit — crawlability, indexing, canonicals, redirects, sitemaps, and status codes — and why doing it in sequence matters.">
+<meta name="description" content="The exact order I work through a technical SEO audit - crawlability, indexing, canonicals, redirects, sitemaps, and status codes - and why doing it in sequence matters.">
 <link rel="canonical" href="https://trinabh.com.np/blog/technical-seo-audit-checklist/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="article">
@@ -12,7 +12,7 @@
 <meta property="og:description" content="The exact order I work through a site when something isn't ranking.">
 <meta property="og:url" content="https://trinabh.com.np/blog/technical-seo-audit-checklist/">
 <meta property="og:image" content="https://trinabh.com.np/profile1.jpg">
-<link rel="icon" href="/favicon.jpg">
+<link rel="icon" href="/fav.jpeg">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
@@ -38,7 +38,7 @@
       <a href="/">Home</a><a href="/about/">About</a><a href="/services/">Services</a><a href="/projects/">Work</a>
       <a href="/blog/" aria-current="page">Writing</a>
     </nav>
-    <a class="head-cta" href="mailto:karkitrinabh30@gmail.com"><span class="dot"></span>available</a>
+    <a class="head-cta" href="mailto:karkitrinabh30@gmail.com?subject=Technical%20SEO%20Help"><span class="dot"></span>available for SEO work</a>
     <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
@@ -50,10 +50,10 @@
       <h1 style="font-family:var(--display); font-weight:700; font-size:clamp(2rem,5vw,3rem); letter-spacing:-.025em; line-height:1.06; margin:0 0 1.4rem">A technical SEO audit checklist I actually use</h1>
 
       <div class="prose">
-        <p>When a page won't rank, the instinct is to reach for content and keywords. But more often than not the real problem is further down — Google either can't crawl the page, can't index it, or is being told not to. So I work an audit in a fixed order, from the most fundamental signal up. If a step fails, the steps above it don't matter yet.</p>
+        <p>When a page won't rank, the instinct is to reach for content and keywords. But more often than not the real problem is further down - Google either can't crawl the page, can't index it, or is being told not to. So I work an audit in a fixed order, from the most fundamental signal up. If a step fails, the steps above it don't matter yet.</p>
 
         <h2>1. Can Google reach it at all?</h2>
-        <p>Start with crawlability, because nothing downstream works if the crawler never arrives. I check <code>robots.txt</code> for accidental <code>Disallow</code> rules, confirm the page returns a <code>200</code> and not a redirect or error, and make sure it isn't orphaned — a page with no internal links pointing to it is a page Google may never find.</p>
+        <p>Start with crawlability, because nothing downstream works if the crawler never arrives. I check <code>robots.txt</code> for accidental <code>Disallow</code> rules, confirm the page returns a <code>200</code> and not a redirect or error, and make sure it isn't orphaned - a page with no internal links pointing to it is a page Google may never find.</p>
 
         <div class="callout">
           <span class="token"><span class="slash">//</span> quick check</span>
@@ -61,7 +61,7 @@
         </div>
 
         <h2>2. Is it allowed to be indexed?</h2>
-        <p>Crawlable isn't the same as indexable. The two signals I check here are the <code>meta robots</code> tag and the <code>X-Robots-Tag</code> header — a stray <code>noindex</code> left over from a staging environment is one of the most common reasons a healthy page never appears in search. Then I check the canonical tag: it should point to the page's own preferred URL, not accidentally to a different page that swallows its ranking signals.</p>
+        <p>Crawlable isn't the same as indexable. The two signals I check here are the <code>meta robots</code> tag and the <code>X-Robots-Tag</code> header - a stray <code>noindex</code> left over from a staging environment is one of the most common reasons a healthy page never appears in search. Then I check the canonical tag: it should point to the page's own preferred URL, not accidentally to a different page that swallows its ranking signals.</p>
 
         <h2>3. Are duplicates splitting the signals?</h2>
         <p>One piece of content reachable at several URLs (with and without a trailing slash, http and https, with tracking parameters) divides link equity and confuses Google about which version to rank. Canonicals and consistent internal linking fix this. The goal is one canonical URL per piece of content, declared the same way everywhere.</p>
@@ -69,18 +69,18 @@
         <h2>4. Do the status codes tell the truth?</h2>
         <p>Status codes are the crawler's primary language, so they have to be honest:</p>
         <ul>
-          <li><strong>200</strong> — a real, live page. Make sure thin or empty pages aren't returning 200 while looking like errors; that's a <strong>Soft 404</strong>, and Google will treat it as low quality.</li>
-          <li><strong>301</strong> — a permanent move. Redirects should resolve in a single hop, never a chain.</li>
-          <li><strong>404</strong> — genuinely gone. Fine in moderation, but broken internal links pointing at 404s leak crawl budget.</li>
+          <li><strong>200</strong> - a real, live page. Make sure thin or empty pages aren't returning 200 while looking like errors; that's a <strong>Soft 404</strong>, and Google will treat it as low quality.</li>
+          <li><strong>301</strong> - a permanent move. Redirects should resolve in a single hop, never a chain.</li>
+          <li><strong>404</strong> - genuinely gone. Fine in moderation, but broken internal links pointing at 404s leak crawl budget.</li>
         </ul>
 
         <h2>5. Can crawlers find everything efficiently?</h2>
-        <p>This is where the XML sitemap earns its place. It should list only canonical, indexable <code>200</code> URLs — no redirects, no <code>noindex</code> pages, no 404s. For a large site, one giant sitemap is hard to process; splitting it into a sitemap index with separate child maps for products, posts, and pages makes coverage far easier for both Google and you to track.</p>
+        <p>This is where the XML sitemap earns its place. It should list only canonical, indexable <code>200</code> URLs - no redirects, no <code>noindex</code> pages, no 404s. For a large site, one giant sitemap is hard to process; splitting it into a sitemap index with separate child maps for products, posts, and pages makes coverage far easier for both Google and you to track.</p>
 
-        <blockquote>A sitemap is a set of recommendations, not commands. It helps discovery; it doesn't override the indexing signals above it. Get steps 1–4 right first, or you're just submitting a tidy list of pages Google has already decided to ignore.</blockquote>
+        <blockquote>A sitemap is a set of recommendations, not commands. It helps discovery; it doesn't override the indexing signals above it. Get steps 1-4 right first, or you're just submitting a tidy list of pages Google has already decided to ignore.</blockquote>
 
         <h2>6. Confirm it in Search Console</h2>
-        <p>Finally, verify the fix held. The URL Inspection tool tells you exactly how Google sees a page — its indexing status, the canonical Google chose (which may differ from yours), and whether the live page passes. When a URL moves from <code>Discovered</code> or <code>Crawled — currently not indexed</code> to <code>Indexed</code>, you know the work landed.</p>
+        <p>Finally, verify the fix held. The URL Inspection tool tells you exactly how Google sees a page - its indexing status, the canonical Google chose (which may differ from yours), and whether the live page passes. When a URL moves from <code>Discovered</code> or <code>Crawled - currently not indexed</code> to <code>Indexed</code>, you know the work landed.</p>
 
         <h2>The short version</h2>
         <p>Reachable → indexable → de-duplicated → honest status codes → discoverable → verified. Always in that order. Most "mystery" ranking problems are just one broken link in that chain, and fixing it is far less mysterious than it looks.</p>
@@ -89,9 +89,9 @@
       <div class="band reveal" style="margin-top:3rem">
         <div>
           <h2 style="font-size:1.5rem">Want me to run this on your site?</h2>
-          <p>I do exactly this audit for clients — and fix what it turns up.</p>
+          <p>I do exactly this audit for clients - and fix what it turns up.</p>
         </div>
-        <a class="btn btn-primary" href="mailto:karkitrinabh30@gmail.com">Email me <span class="arrow">↗</span></a>
+        <a class="btn btn-primary" href="mailto:karkitrinabh30@gmail.com?subject=Technical%20SEO%20Help">Email me <span class="arrow">↗</span></a>
       </div>
     </div>
   </article>
@@ -100,7 +100,7 @@
 <footer class="site-foot">
   <div class="wrap">
     <div class="foot-grid">
-      <div><p class="foot-lead">Technical SEO that practices what it preaches — clean metadata, valid sitemaps, indexable pages.</p></div>
+      <div><p class="foot-lead">Technical SEO that practices what it preaches - clean metadata, valid sitemaps, indexable pages.</p></div>
       <div><h4>Pages</h4><a href="/about/">About</a><a href="/services/">Services</a><a href="/projects/">Work</a><a href="/blog/">Writing</a></div>
       <div><h4>Contact</h4><a href="mailto:karkitrinabh30@gmail.com">karkitrinabh30@gmail.com</a><a href="/sitemap.xml">sitemap.xml</a></div>
     </div>
