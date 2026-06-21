@@ -147,9 +147,16 @@ a { color: inherit; text-decoration: none; }
 
 @media (max-width: 760px) {
   .nav, .head-cta { display: none; }
+  .head-inner {
+    flex-wrap: wrap;
+    height: auto;
+    min-height: 64px;
+    position: relative;
+  }
   .nav-toggle {
     display: inline-flex; flex-direction: column; gap: 4px;
     background: none; border: 0; cursor: pointer; padding: 8px;
+    margin-left: auto;
   }
   .nav-toggle span { width: 22px; height: 2px; background: var(--ink); transition: .25s var(--ease); }
   .site-head.open .nav-toggle span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
@@ -157,10 +164,14 @@ a { color: inherit; text-decoration: none; }
   .site-head.open .nav-toggle span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
   .site-head.open .nav {
     display: flex; flex-direction: column; align-items: flex-start;
-    gap: 1.1rem; padding: 1.5rem var(--gutter) 2rem;
+    order: 3;
+    flex: 0 0 100%;
+    width: 100%;
+    gap: 1.1rem; padding: 1rem 0 1.35rem;
     border-top: 1px solid var(--line);
     background: var(--paper);
   }
+  .site-head.open .nav a { display: block; width: 100%; }
   .site-head.open .nav a { font-size: 1.15rem; }
 }
 
