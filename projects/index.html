@@ -56,8 +56,7 @@
         <h3>Recovering an e-commerce store from Soft 404s</h3>
         <p style="margin-bottom:1rem"><strong>Context.</strong> Empty and thin category pages on a store were being treated by Google as Soft 404s - pages that return a 200 status but look like errors - so they dropped out of the index and dragged on crawl efficiency.</p>
         <p style="margin-bottom:1rem"><strong>What I did.</strong> Audited the affected templates, added proper handling for genuinely empty categories, removed accidental <code>noindex</code> directives on pages that should rank, and corrected canonicals so Google stopped seeing duplicates.</p>
-        <p><strong>Outcome.</strong> The affected category URLs returned to a clean indexable state and re-entered the index after recrawl.
-          <span class="metric-note">Add your real metric here: affected URLs reindexed, Soft 404s reduced, or recovery time after recrawl.</span></p>
+        <p><strong>Outcome.</strong> The affected category URLs returned to a clean indexable state and re-entered the index after recrawl.</p>
         <div class="tags"><span class="tag">e-commerce</span><span class="tag">Soft 404</span><span class="tag">noindex</span><span class="tag">canonical</span></div>
       </article>
 
@@ -66,8 +65,7 @@
         <h3>Untangling a redirect chain after a migration</h3>
         <p style="margin-bottom:1rem"><strong>Context.</strong> A site migration had left behind multi-hop redirect chains (old URL → interim URL → final URL), wasting crawl budget and diluting link signals.</p>
         <p style="margin-bottom:1rem"><strong>What I did.</strong> Mapped every legacy URL to its correct destination, collapsed the chains into clean single-hop 301s, fixed the resulting 4xx stragglers, and updated internal links to point at final URLs directly.</p>
-        <p><strong>Outcome.</strong> Redirects resolved in a single hop and the broken-link count in Search Console fell back toward zero.
-          <span class="metric-note">Add your real metric here: redirect chains collapsed, 404s repaired, or legacy URLs mapped.</span></p>
+        <p><strong>Outcome.</strong> Redirects resolved in a single hop and the broken-link count in Search Console fell back toward zero.</p>
         <div class="tags"><span class="tag">migration</span><span class="tag">301 mapping</span><span class="tag">redirect chains</span><span class="tag">internal links</span></div>
       </article>
 
@@ -76,8 +74,7 @@
         <h3>Sitemap architecture for a large catalog</h3>
         <p style="margin-bottom:1rem"><strong>Context.</strong> A large store relied on a single oversized sitemap that crawlers struggled to process, leaving newer products and posts undiscovered.</p>
         <p style="margin-bottom:1rem"><strong>What I did.</strong> Split the monolith into a sitemap index with separate child maps for products, blog posts, and static pages, then submitted and monitored coverage in Search Console.</p>
-        <p><strong>Outcome.</strong> Crawlers could read and track each section independently, improving discovery of new URLs.
-          <span class="metric-note">Add your real metric here: sitemap sections created, URLs submitted, or coverage improved.</span></p>
+        <p><strong>Outcome.</strong> Crawlers could read and track each section independently, improving discovery of new URLs.</p>
         <div class="tags"><span class="tag">sitemaps</span><span class="tag">sitemap index</span><span class="tag">crawl coverage</span></div>
       </article>
 
@@ -86,8 +83,7 @@
         <h3>Clean Search Console foundation for a launch</h3>
         <p style="margin-bottom:1rem"><strong>Context.</strong> A newly launched site had no verified search presence and no way to measure organic performance.</p>
         <p style="margin-bottom:1rem"><strong>What I did.</strong> Verified the property via DNS/TXT records, submitted the sitemap so crawling began immediately, set up Bing Webmaster Tools in parallel, and connected Google Analytics for end-to-end tracking.</p>
-        <p><strong>Outcome.</strong> The site was measurable and crawlable from day one, with a verified property and a registered, error-free sitemap.
-          <span class="metric-note">Add your real metric here: verification time, sitemap status, or first indexed pages.</span></p>
+        <p><strong>Outcome.</strong> The site was measurable and crawlable from day one, with a verified property and a registered, error-free sitemap.</p>
         <div class="tags"><span class="tag">GSC verification</span><span class="tag">DNS / TXT</span><span class="tag">Bing</span><span class="tag">Analytics</span></div>
       </article>
 
