@@ -412,3 +412,34 @@ a { color: inherit; text-decoration: none; }
 
 .mt-0 { margin-top: 0; }
 .center { text-align: center; }
+
+/* ============================================================
+   Dark Mode Stylesheet (System Preferred)
+   ============================================================ */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --paper:      #0C0E12;  /* rich dark slate/charcoal base */
+    --panel:      #141923;  /* raised dark panel surface */
+    --ink:        #F3F4F0;  /* cool off-white for body text */
+    --ink-soft:   #A9B2C3;  /* secondary text with good contrast */
+    --ink-faint:  #6D778B;  /* muted captions and borders */
+    --line:       #222938;  /* hairline separator on dark paper */
+    --line-soft:  #1B212D;  /* hairline on panels */
+    --index:      #1CB875;  /* slightly brighter green for dark contrast */
+    --index-dim:  #4AD79E;  /* lighter green for text on dark */
+    --signal:     #E55F2D;  /* brighter orange-clay for warnings */
+  }
+
+  /* Adjust inline code background contrast */
+  .prose code {
+    background: #1B212D;
+    color: var(--index-dim);
+  }
+
+  /* Adjust main footer logo to stand out in dark mode */
+  .brand-mark {
+    background: var(--ink);
+    color: var(--paper);
+  }
+}
+
