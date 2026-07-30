@@ -2,16 +2,21 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>About - Trinabh Karki, Technical SEO Analyst</title>
 <meta name="description" content="About Trinabh Karki: a BCA student from Nepal and SEO Analyst at SmartSites Nepal, focused on technical SEO, indexing, crawlability, Search Console, Bing Webmaster Tools, and CMS SEO fixes.">
 <link rel="canonical" href="https://trinabh.com.np/about/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="profile">
+<meta property="og:site_name" content="Trinabh Karki">
 <meta property="og:title" content="About - Trinabh Karki">
 <meta property="og:description" content="BCA student and technical SEO analyst from Nepal.">
 <meta property="og:url" content="https://trinabh.com.np/about/">
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="About - Trinabh Karki">
+<meta name="twitter:description" content="BCA student and technical SEO analyst from Nepal.">
+<meta name="twitter:image" content="https://trinabh.com.np/images/og-banner.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -28,7 +33,7 @@
       "@id": "https://trinabh.com.np/#trinabh",
       "name": "Trinabh Karki",
       "url": "https://trinabh.com.np/",
-      "image": "https://trinabh.com.np/profile1.jpg",
+      "image": "https://trinabh.com.np/images/profile1.webp",
       "jobTitle": "Technical SEO Analyst",
       "email": "karkitrinabh30@gmail.com",
       "worksFor": {
@@ -47,7 +52,11 @@
         "Canonical tags",
         "Redirects",
         "XML sitemaps",
-        "Google Search Console"
+        "Google Search Console",
+        "Google Analytics 4",
+        "Google Tag Manager",
+        "Site migrations",
+        "Malware remediation"
       ],
       "sameAs": [
         "https://www.linkedin.com/in/trinabhkarki/",
@@ -57,20 +66,20 @@
   ]
 }
 </script>
-<meta property="og:image" content="https://trinabh.com.np/profile1.jpg">
+<meta property="og:image" content="https://trinabh.com.np/images/og-banner.png">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/main.css">
+<link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
 
 <header class="site-head">
   <div class="wrap head-inner">
     <a class="brand" href="/"><span class="brand-mark">T</span><span class="brand-name">Trinabh Karki<span>Technical SEO</span></span></a>
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" id="primary-nav" aria-label="Primary">
       <a href="/">Home</a>
       <a href="/about/" aria-current="page">About</a>
       <a href="/services/">Services</a>
@@ -78,7 +87,11 @@
       <a href="/blog/">Writing</a>
     </nav>
     <a class="head-cta" href="mailto:karkitrinabh30@gmail.com?subject=Technical%20SEO%20Help"><span class="dot"></span>available for SEO work</a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+    <button class="nav-toggle" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -98,13 +111,14 @@
         <p>I work regularly with Google Search Console, Bing Webmaster Tools, Screaming Frog, Google Analytics, and different CMS platforms. A lot of my day is spent checking indexable and non-indexable pages, fixing canonical and <code>noindex</code> issues, reviewing <code>robots.txt</code>, submitting URLs for indexing, and validating fixes after implementation.</p>
         <p>On the implementation side, I handle hands-on updates across WordPress, Shopify, Webflow, Magento, Wix, Squarespace, BigCommerce, Joomla, MODX, Sanity, Weebly, Square, static websites, headless CMS setups, and cPanel-based websites. I also work with domain and hosting platforms like GoDaddy, Bluehost, WP Engine, and other providers for DNS, TXT records, HTML file uploads, meta tag verification, and CMS-based verification.</p>
         <p>I also run technical audits with Screaming Frog, prepare campaign and quarterly reports, find redirect chains, broken links, 404s, 5xx issues, crawl errors, alt text issues, and recurring Google Search Console problems. After fixes are made, I validate them in Search Console and track whether the affected pages recover.</p>
+        <p>Beyond indexing, I set up Google Analytics 4 and Google Tag Manager, building the triggers and tags that turn phone-call clicks and form submissions - Gravity Forms, Contact Form 7 - into trackable events, and I manage Google Merchant Center product feeds for stores running Shopping campaigns. I've also handled site migrations, cleaned up malware on compromised WordPress installs, and keep plugin stacks updated. For quick landing pages, I use Claude to go from brief to shippable page faster.</p>
         <h2>How I think about the work</h2>
         <p>Good technical SEO is mostly about removing friction between a site and a crawler. A page that returns the right status code, declares its canonical, and shows up in a valid sitemap is a page Google can trust. I like that the work is verifiable - you can watch a URL move from <code>Discovered</code> to <code>Indexed</code> and know the fix held.</p>
         <blockquote>This portfolio runs on the same principles I apply to client sites: clean URLs, valid metadata, a real sitemap, and pages that are actually indexable.</blockquote>
       </div>
 
       <aside class="reveal">
-        <img src="/profile1.jpg" alt="Trinabh Karki" width="360" height="450" style="border-radius:var(--radius); border:1px solid var(--line); margin-bottom:1.4rem">
+        <img src="/images/profile1.webp" alt="Trinabh Karki" width="360" height="450" loading="lazy" style="border-radius:var(--radius); border:1px solid var(--line); margin-bottom:1.4rem">
         <div class="meta-panel">
           <div class="meta-bar"><span class="req">GET /about</span><span class="ok">200 OK</span></div>
           <div class="meta-body">
@@ -150,15 +164,31 @@
             <span class="chip">Canonical tags</span><span class="chip">noindex rules</span><span class="chip">robots.txt</span>
             <span class="chip">XML sitemaps</span><span class="chip">URL indexing</span><span class="chip">3xx / 4xx audits</span>
             <span class="chip">5xx errors</span><span class="chip">Soft 404 fixes</span><span class="chip">Internal linking</span>
-            <span class="chip">Alt text issues</span>
+            <span class="chip">Alt text issues</span><span class="chip">Image weight audits</span>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 1rem">Analytics & Tracking</h3>
+          <div class="chips">
+            <span class="chip">Google Analytics 4</span><span class="chip">Google Tag Manager</span>
+            <span class="chip">Click-to-call tracking</span><span class="chip">Form submission tracking</span>
+            <span class="chip">Google Merchant Center feeds</span>
+          </div>
+        </div>
+        <div>
+          <h3 style="font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 1rem">Site Maintenance</h3>
+          <div class="chips">
+            <span class="chip">Site migrations</span><span class="chip">Malware cleanup</span>
+            <span class="chip">WordPress plugin updates</span><span class="chip">Gravity Forms</span>
+            <span class="chip">Contact Form 7</span>
           </div>
         </div>
         <div>
           <h3 style="font-family:var(--mono); font-size:.72rem; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-faint); margin:0 0 1rem">Tools</h3>
           <div class="chips">
             <span class="chip">Google Search Console</span><span class="chip">Bing Webmaster Tools</span>
-            <span class="chip">Screaming Frog</span><span class="chip">Google Analytics</span>
-            <span class="chip">Crawl reports</span><span class="chip">Quarterly audits</span>
+            <span class="chip">Screaming Frog</span><span class="chip">Crawl reports</span>
+            <span class="chip">Quarterly audits</span><span class="chip">Claude (AI-assisted builds)</span>
           </div>
         </div>
       </div>
@@ -205,6 +235,6 @@
   </div>
 </footer>
 
-<script src="/site.js"></script>
+<script src="/js/site.js"></script>
 </body>
 </html>

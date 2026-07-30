@@ -2,23 +2,28 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
+<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Trinabh Karki - Technical SEO Analyst in Nepal</title>
 <meta name="description" content="Trinabh Karki is a technical SEO analyst and BCA student in Nepal. I fix the code and configuration issues that keep websites from ranking - indexing, canonicals, redirects, sitemaps, and search console setup.">
 <link rel="canonical" href="https://trinabh.com.np/">
 <meta name="robots" content="index, follow">
 <meta property="og:type" content="website">
+<meta property="og:site_name" content="Trinabh Karki">
 <meta property="og:title" content="Trinabh Karki - Technical SEO Analyst">
 <meta property="og:description" content="I fix the technical issues that keep websites from ranking on Google.">
 <meta property="og:url" content="https://trinabh.com.np/">
-<meta property="og:image" content="https://trinabh.com.np/profile1.jpg">
-<meta name="twitter:card" content="summary">
+<meta property="og:image" content="https://trinabh.com.np/images/og-banner.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Trinabh Karki - Technical SEO Analyst">
+<meta name="twitter:description" content="I fix the technical issues that keep websites from ranking on Google.">
+<meta name="twitter:image" content="https://trinabh.com.np/images/og-banner.png">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Inter:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/main.css">
+<link rel="stylesheet" href="/css/main.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -27,10 +32,10 @@
   "name": "Trinabh Karki",
   "jobTitle": "Technical SEO Analyst",
   "url": "https://trinabh.com.np/",
-  "image": "https://trinabh.com.np/profile1.jpg",
+  "image": "https://trinabh.com.np/images/profile1.webp",
   "worksFor": { "@type": "Organization", "name": "SmartSites Nepal" },
   "address": { "@type": "PostalAddress", "addressCountry": "NP" },
-  "knowsAbout": ["Technical SEO", "Indexing", "Google Search Console", "Site migrations", "Sitemaps"],
+  "knowsAbout": ["Technical SEO", "Indexing", "Google Search Console", "Site migrations", "Sitemaps", "Google Analytics 4", "Google Tag Manager", "Malware remediation"],
   "email": "karkitrinabh30@gmail.com",
   "sameAs": [
     "https://www.linkedin.com/in/trinabhkarki/",
@@ -47,7 +52,7 @@
       <span class="brand-mark">T</span>
       <span class="brand-name">Trinabh Karki<span>Technical SEO</span></span>
     </a>
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" id="primary-nav" aria-label="Primary">
       <a href="/" aria-current="page">Home</a>
       <a href="/about/">About</a>
       <a href="/services/">Services</a>
@@ -55,7 +60,11 @@
       <a href="/blog/">Writing</a>
     </nav>
     <a class="head-cta" href="mailto:karkitrinabh30@gmail.com?subject=Technical%20SEO%20Help"><span class="dot"></span>available for SEO work</a>
-    <button class="nav-toggle" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    <button class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false">
+      <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"></circle><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"></path></svg>
+      <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+    </button>
+    <button class="nav-toggle" aria-label="Menu" aria-controls="primary-nav" aria-expanded="false"><span></span><span></span><span></span></button>
   </div>
 </header>
 
@@ -205,6 +214,6 @@
   </div>
 </footer>
 
-<script src="/site.js"></script>
+<script src="/js/site.js"></script>
 </body>
 </html>
