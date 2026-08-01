@@ -4,6 +4,10 @@ on:
   push:
     branches: [master]
 
+permissions:
+  contents: read
+  id-token: write
+
 jobs:
   resubmit:
     runs-on: ubuntu-latest
@@ -14,10 +18,15 @@ jobs:
         with:
           node-version: 22
 
+      - id: auth
+        uses: google-github-actions/auth@v2
+        with:
+          project_id: trinabhs-portfolio
+          workload_identity_provider: projects/939144598273/locations/global/workloadIdentityPools/github-actions-pool/providers/github-actions-provider
+          service_account: gsc-sitemap-bot@trinabhs-portfolio.iam.gserviceaccount.com
+
       - name: Install googleapis
         run: npm install googleapis@144
 
       - name: Resubmit sitemap
-        env:
-          GSC_SERVICE_ACCOUNT_KEY: ${{ secrets.GSC_SERVICE_ACCOUNT_KEY }}
         run: node scripts/resubmit-sitemap.js
