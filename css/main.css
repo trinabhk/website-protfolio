@@ -388,6 +388,25 @@ a { color: inherit; text-decoration: none; }
 }
 .callout .token { display: block; margin-bottom: .5rem; }
 
+.faq-list { margin: 1.4rem 0 2rem; }
+.faq-item {
+  background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius);
+  padding: 0 1.3rem; margin-bottom: .7rem; transition: border-color .2s var(--ease);
+}
+.faq-item[open] { border-color: var(--line); }
+.faq-item summary {
+  list-style: none; cursor: pointer; padding: 1.05rem 0;
+  display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+  font-family: var(--display); font-weight: 500; font-size: 1.02rem; color: var(--ink);
+}
+.faq-item summary::-webkit-details-marker { display: none; }
+.faq-item summary::after {
+  content: "+"; flex-shrink: 0; font-family: var(--mono); font-size: 1.1rem; line-height: 1;
+  color: var(--ink-faint); transition: transform .2s var(--ease);
+}
+.faq-item[open] summary::after { transform: rotate(45deg); }
+.faq-item p { margin: 0 0 1.1rem; color: var(--ink-soft); font-size: .96rem; }
+
 /* ============================================================
    Footer
    ============================================================ */
