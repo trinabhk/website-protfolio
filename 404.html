@@ -38,18 +38,32 @@
 </header>
 
 <main>
-  <section class="page-head center" style="padding: 6rem 0;">
+  <section class="page-head center" style="padding: 5.5rem 0 1rem;">
     <div class="wrap" style="max-width: 600px;">
-      <p class="eyebrow"><span class="token"><span class="slash">STATUS</span> 404</span></p>
+      <p class="eyebrow" style="justify-content:center"><span class="token"><span class="slash">/</span> status 404</span></p>
       <h1 style="margin-inline: auto;">Page not indexed.</h1>
-      <p style="margin-inline: auto; margin-bottom: 2rem;">The requested URL returned a status code 404. It either doesn't exist, has been permanently redirected, or crawled off-course.</p>
-      <div class="hero-cta-row" style="justify-content: center;">
+      <p style="margin-inline: auto;">The requested URL returned a status code 404. It either doesn't exist, has been permanently redirected, or crawled off-course.</p>
+    </div>
+  </section>
+
+  <section class="section center" style="border-top:none; padding-top:1.5rem;">
+    <div class="wrap" style="max-width: 420px;">
+      <div class="meta-panel" style="text-align:left">
+        <div class="meta-bar"><span class="req" id="notfound-path">GET /</span><span class="err">404</span></div>
+        <div class="meta-body">
+          <div class="meta-row"><span class="k">status</span><span class="v">Not Found</span></div>
+          <div class="meta-row"><span class="k">indexed</span><span class="v">no</span></div>
+          <div class="meta-row"><span class="k">next</span><span class="v">double-check the URL, or it moved</span></div>
+        </div>
+      </div>
+      <div class="hero-cta-row" style="justify-content: center; margin-top: 1.8rem;">
         <a class="btn btn-primary" href="/">Return Home</a>
         <a class="btn btn-ghost" href="/blog/">Read the Blog</a>
       </div>
     </div>
   </section>
 </main>
+<script>document.getElementById('notfound-path').textContent = 'GET ' + location.pathname;</script>
 
 <footer class="site-foot">
   <div class="wrap">

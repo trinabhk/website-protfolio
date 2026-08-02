@@ -110,6 +110,32 @@
   window.addEventListener('pointercancel', onUp);
 })();
 
+// Crawl progress: scroll depth read as how far a crawler has gotten
+(function () {
+  var bar = document.createElement('div');
+  bar.className = 'crawl-progress';
+  bar.innerHTML = '<div class="crawl-progress-bar"></div>';
+  document.body.appendChild(bar);
+  var fill = bar.firstChild;
+
+  function update() {
+    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
+    var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
+    fill.style.width = Math.min(100, Math.max(0, pct)) + '%';
+  }
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+  window.addEventListener('resize', update);
+})();
+
+// Tab-away easter egg: the "page" reports itself gone while you're not looking
+(function () {
+  var original = document.title;
+  document.addEventListener('visibilitychange', function () {
+    document.title = document.hidden ? '410 Gone — come back?' : original;
+  });
+})();
+
 // Live Kathmandu clock in the hero terminal panel
 (function () {
   var el = document.getElementById('local-time');
