@@ -1,0 +1,15 @@
+# AI tooling config (personal workflow, not part of the site)
+.claude/
+
+# Editor / IDE
+.vscode/
+.idea/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Node (in case scripts/ dependencies are installed locally)
+node_modules/
+npm-debug.log*
