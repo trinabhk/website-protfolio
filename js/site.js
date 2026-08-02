@@ -47,3 +47,19 @@
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
   items.forEach(function (el) { io.observe(el); });
 })();
+
+// Live Kathmandu clock in the hero terminal panel
+(function () {
+  var el = document.getElementById('local-time');
+  if (!el) return;
+  var fmt = new Intl.DateTimeFormat('en-GB', {
+    timeZone: 'Asia/Kathmandu', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
+  });
+  function tick() { el.textContent = fmt.format(new Date()) + ' NPT'; }
+  tick();
+  setInterval(tick, 1000);
+})();
+
+// For anyone reading the source
+console.log('%cGET / → 200 OK', 'font-family:monospace;font-size:13px;font-weight:bold;color:#14794E');
+console.log('%cLooking under the hood already - I like that. If you\'re hiring or just want to talk technical SEO: karkitrinabh30@gmail.com', 'font-family:monospace;font-size:12px;color:#868C93');
