@@ -48,6 +48,68 @@
   items.forEach(function (el) { io.observe(el); });
 })();
 
+// Drag-to-dismiss the welcome slide: press and slide up to reveal the rest of the page
+(function () {
+  var welcome = document.querySelector('.welcome');
+  var target = document.getElementById('proof');
+  if (!welcome || !target) return;
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var dragging = false;
+  var startY = 0;
+  var delta = 0;
+
+  function setTransform(y, opacity) {
+    welcome.style.transform = y ? 'translateY(' + y + 'px)' : '';
+    welcome.style.opacity = opacity != null ? String(opacity) : '';
+  }
+
+  function onDown(e) {
+    if (e.target.closest('a, button')) return;
+    dragging = true;
+    startY = e.clientY;
+    welcome.style.transition = 'none';
+    welcome.classList.add('dragging');
+  }
+
+  function onMove(e) {
+    if (!dragging) return;
+    e.preventDefault();
+    var raw = e.clientY - startY;
+    delta = raw < 0 ? raw : raw * 0.15; // resist downward drags
+    var vh = window.innerHeight;
+    var opacity = Math.max(1 - Math.abs(Math.min(delta, 0)) / (vh * 0.8), .25);
+    setTransform(delta, opacity);
+  }
+
+  function onUp() {
+    if (!dragging) return;
+    dragging = false;
+    welcome.classList.remove('dragging');
+    welcome.style.transition = 'transform .4s var(--ease), opacity .3s var(--ease)';
+    var threshold = window.innerHeight * 0.16;
+
+    if (delta < -threshold && !reduce) {
+      setTransform(-window.innerHeight, 0);
+      setTimeout(function () {
+        target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth' });
+        setTimeout(function () {
+          welcome.style.transition = 'none';
+          setTransform(0, null);
+        }, 500);
+      }, 250);
+    } else {
+      setTransform(0, null);
+    }
+    delta = 0;
+  }
+
+  welcome.addEventListener('pointerdown', onDown);
+  window.addEventListener('pointermove', onMove);
+  window.addEventListener('pointerup', onUp);
+  window.addEventListener('pointercancel', onUp);
+})();
+
 // Live Kathmandu clock in the hero terminal panel
 (function () {
   var el = document.getElementById('local-time');
