@@ -132,7 +132,7 @@
 (function () {
   var original = document.title;
   document.addEventListener('visibilitychange', function () {
-    document.title = document.hidden ? '410 Gone — come back?' : original;
+    document.title = document.hidden ? '410 Gone - come back?' : original;
   });
 })();
 
