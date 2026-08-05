@@ -93,18 +93,18 @@
         <h2>4. Do the status codes tell the truth?</h2>
         <p>Status codes are the crawler's primary language, so they have to be honest:</p>
         <ul>
-          <li><strong>200</strong> - a real, live page. Make sure thin or empty pages aren't returning 200 while looking like errors; that's a <strong>Soft 404</strong>, and Google will treat it as low quality.</li>
-          <li><strong>301</strong> - a permanent move. Redirects should resolve in a single hop, never a chain.</li>
+          <li><strong>200</strong> - a real, live page. Make sure thin or empty pages aren't returning 200 while looking like errors; that's a <a href="/projects/#soft-404"><strong>Soft 404</strong></a>, and Google will treat it as low quality.</li>
+          <li><strong>301</strong> - a permanent move. Redirects should <a href="/projects/#redirect-chain">resolve in a single hop, never a chain</a>.</li>
           <li><strong>404</strong> - genuinely gone. Fine in moderation, but broken internal links pointing at 404s leak crawl budget.</li>
         </ul>
 
         <h2>5. Can crawlers find everything efficiently?</h2>
-        <p>This is where the XML sitemap earns its place. It should list only canonical, indexable <code>200</code> URLs - no redirects, no <code>noindex</code> pages, no 404s. For a large site, one giant sitemap is hard to process; splitting it into a sitemap index with separate child maps for products, posts, and pages makes coverage far easier for both Google and you to track.</p>
+        <p>This is where the XML sitemap earns its place. It should list only canonical, indexable <code>200</code> URLs - no redirects, no <code>noindex</code> pages, no 404s. For a large site, one giant sitemap is hard to process; <a href="/projects/#sitemap-architecture">splitting it into a sitemap index with separate child maps</a> for products, posts, and pages makes coverage far easier for both Google and you to track.</p>
 
         <blockquote>A sitemap is a set of recommendations, not commands. It helps discovery; it doesn't override the indexing signals above it. Get steps 1-4 right first, or you're just submitting a tidy list of pages Google has already decided to ignore.</blockquote>
 
         <h2>6. Confirm it in Search Console</h2>
-        <p>Finally, verify the fix held. The URL Inspection tool tells you exactly how Google sees a page - its indexing status, the canonical Google chose (which may differ from yours), and whether the live page passes. When a URL moves from <code>Discovered</code> or <code>Crawled - currently not indexed</code> to <code>Indexed</code>, you know the work landed.</p>
+        <p>Finally, verify the fix held. The <a href="/services/#search-console">URL Inspection tool</a> tells you exactly how Google sees a page - its indexing status, the canonical Google chose (which may differ from yours), and whether the live page passes. When a URL moves from <code>Discovered</code> or <code>Crawled - currently not indexed</code> to <code>Indexed</code>, you know the work landed.</p>
 
         <h2>The short version</h2>
         <p>Reachable → indexable → de-duplicated → honest status codes → discoverable → verified. Always in that order. Most "mystery" ranking problems are just one broken link in that chain, and fixing it is far less mysterious than it looks.</p>
@@ -113,7 +113,7 @@
       <div class="band reveal" style="margin-top:3rem">
         <div>
           <h2 style="font-size:1.5rem">Want me to run this on your site?</h2>
-          <p>I do exactly this audit for clients - and fix what it turns up.</p>
+          <p>I do exactly <a href="/services/#technical-audits">this audit</a> for clients - and fix what it turns up.</p>
         </div>
         <a class="btn btn-primary" href="mailto:karkitrinabh30@gmail.com?subject=Technical%20SEO%20Help">Email me <span class="arrow">↗</span></a>
       </div>

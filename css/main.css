@@ -492,6 +492,20 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
 }
 .callout .token { display: block; margin-bottom: .5rem; }
 
+/* ---------- inline content links: underlined so they read as clickable ---------- */
+.prose a, .callout a, .faq-list a, .card p a, .card h3 a, .row p a {
+  color: var(--index-dim);
+  text-decoration: underline;
+  text-decoration-color: var(--index-dim);
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+  transition: color .15s var(--ease), text-decoration-color .15s var(--ease);
+}
+.prose a:hover, .callout a:hover, .faq-list a:hover, .card p a:hover, .card h3 a:hover, .row p a:hover {
+  color: var(--index);
+  text-decoration-color: var(--index);
+}
+
 .faq-list { margin: 1.4rem 0 2rem; }
 .faq-item {
   background: var(--panel); border: 1px solid var(--line-soft); border-radius: var(--radius);

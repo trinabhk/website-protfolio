@@ -57,54 +57,54 @@
       <h2 class="mt-0" style="font-family:var(--display); font-weight:700; font-size:clamp(1.6rem, 3.4vw, 2.2rem); margin-bottom:1.8rem; letter-spacing: -.02em;">Case Studies</h2>
       <div class="grid" style="gap:1.4rem">
 
-        <article class="card reveal">
+        <article class="card reveal" id="soft-404">
           <span class="num">case 01 · 200 OK</span>
-          <h3>Recovering an e-commerce store from Soft 404s</h3>
+          <h3>Recovering an e-commerce store from <a href="/services/#crawl-repair">Soft 404s</a></h3>
           <p style="margin-bottom:1rem"><strong>Context.</strong> Empty and thin category pages on a store were being treated by Google as Soft 404s - pages that return a 200 status but look like errors - so they dropped out of the index and dragged on crawl efficiency.</p>
-          <p style="margin-bottom:1rem"><strong>What I did.</strong> Audited the affected templates, added proper handling for genuinely empty categories, removed accidental <code>noindex</code> directives on pages that should rank, and corrected canonicals so Google stopped seeing duplicates.</p>
+          <p style="margin-bottom:1rem"><strong>What I did.</strong> Audited the affected templates, added proper handling for genuinely empty categories, removed accidental <code>noindex</code> directives on pages that should rank, and corrected <a href="/blog/technical-seo-audit-checklist/">canonicals</a> so Google stopped seeing duplicates.</p>
           <p><strong>Outcome.</strong> The affected category URLs returned to a clean indexable state and re-entered the index after recrawl.</p>
           <div class="tags"><span class="tag">e-commerce</span><span class="tag">Soft 404</span><span class="tag">noindex</span><span class="tag">canonical</span></div>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" id="redirect-chain">
           <span class="num">case 02 · 301</span>
-          <h3>Untangling a redirect chain after a migration</h3>
+          <h3>Untangling a <a href="/services/#redirects">redirect chain</a> after a migration</h3>
           <p style="margin-bottom:1rem"><strong>Context.</strong> A site migration had left behind multi-hop redirect chains (old URL → interim URL → final URL), wasting crawl budget and diluting link signals.</p>
-          <p style="margin-bottom:1rem"><strong>What I did.</strong> Mapped every legacy URL to its correct destination, collapsed the chains into clean single-hop 301s, fixed the resulting 4xx stragglers, and updated internal links to point at final URLs directly.</p>
+          <p style="margin-bottom:1rem"><strong>What I did.</strong> Mapped every legacy URL to its correct destination, collapsed the chains into <a href="/blog/technical-seo-audit-checklist/">clean single-hop 301s</a>, fixed the resulting 4xx stragglers, and updated internal links to point at final URLs directly.</p>
           <p><strong>Outcome.</strong> Redirects resolved in a single hop and the broken-link count in Search Console fell back toward zero.</p>
           <div class="tags"><span class="tag">migration</span><span class="tag">301 mapping</span><span class="tag">redirect chains</span><span class="tag">internal links</span></div>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" id="sitemap-architecture">
           <span class="num">case 03 · XML</span>
-          <h3>Sitemap architecture for a large catalog</h3>
+          <h3><a href="/services/#sitemaps">Sitemap architecture</a> for a large catalog</h3>
           <p style="margin-bottom:1rem"><strong>Context.</strong> A large store relied on a single oversized sitemap that crawlers struggled to process, leaving newer products and posts undiscovered.</p>
-          <p style="margin-bottom:1rem"><strong>What I did.</strong> Split the monolith into a sitemap index with separate child maps for products, blog posts, and static pages, then submitted and monitored coverage in Search Console.</p>
+          <p style="margin-bottom:1rem"><strong>What I did.</strong> Split the monolith into a sitemap index with separate child maps for products, blog posts, and static pages, then submitted and monitored coverage in <a href="/services/#search-console">Search Console</a>.</p>
           <p><strong>Outcome.</strong> Crawlers could read and track each section independently, improving discovery of new URLs.</p>
           <div class="tags"><span class="tag">sitemaps</span><span class="tag">sitemap index</span><span class="tag">crawl coverage</span></div>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" id="search-console-launch">
           <span class="num">case 04 · setup</span>
-          <h3>Clean Search Console foundation for a launch</h3>
+          <h3>Clean <a href="/services/#search-console">Search Console</a> foundation for a launch</h3>
           <p style="margin-bottom:1rem"><strong>Context.</strong> A newly launched site had no verified search presence and no way to measure organic performance.</p>
           <p style="margin-bottom:1rem"><strong>What I did.</strong> Verified the property via DNS/TXT records, submitted the sitemap so crawling began immediately, set up Bing Webmaster Tools in parallel, and connected Google Analytics for end-to-end tracking.</p>
           <p><strong>Outcome.</strong> The site was measurable and crawlable from day one, with a verified property and a registered, error-free sitemap.</p>
           <div class="tags"><span class="tag">GSC verification</span><span class="tag">DNS / TXT</span><span class="tag">Bing</span><span class="tag">Analytics</span></div>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" id="ga4-lead-tracking">
           <span class="num">case 05 · GTM</span>
-          <h3>Lead tracking setup with GA4 and Tag Manager</h3>
+          <h3><a href="/services/#analytics">Lead tracking setup with GA4 and Tag Manager</a></h3>
           <p style="margin-bottom:1rem"><strong>Context.</strong> A business site had Google Analytics installed but no visibility into which actions actually turned into leads - phone clicks and form fills were invisible in the reports.</p>
           <p style="margin-bottom:1rem"><strong>What I did.</strong> Set up GA4 and Google Tag Manager, built triggers and tags for click-to-call and form-submission events (Gravity Forms and Contact Form 7), and validated every event firing correctly in GA4's real-time view.</p>
           <p><strong>Outcome.</strong> Phone-call clicks and form submissions now show up as trackable events in GA4, giving a real read on which pages generate leads.</p>
           <div class="tags"><span class="tag">GA4</span><span class="tag">Google Tag Manager</span><span class="tag">lead tracking</span><span class="tag">form tracking</span></div>
         </article>
 
-        <article class="card reveal">
+        <article class="card reveal" id="wordpress-malware">
           <span class="num">case 06 · cleanup</span>
-          <h3>Malware cleanup and migration on an outdated WordPress site</h3>
+          <h3><a href="/services/#migrations">Malware cleanup and migration</a> on an outdated WordPress site</h3>
           <p style="margin-bottom:1rem"><strong>Context.</strong> A WordPress site running long-outdated plugins had been compromised with injected malware, and needed to move hosts without carrying the infection over.</p>
           <p style="margin-bottom:1rem"><strong>What I did.</strong> Identified and removed the malicious code, updated WordPress core and every outdated plugin, hardened the install, then migrated the cleaned site to its new host.</p>
           <p><strong>Outcome.</strong> The site came back clean on the new host with no reinfection, running on a fully updated plugin stack.</p>
