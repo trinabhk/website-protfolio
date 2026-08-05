@@ -13,10 +13,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v5
+        with:
+          fetch-depth: 0 # build-feeds.js reads per-file commit dates
 
       - uses: actions/setup-node@v5
         with:
           node-version: 22
+
+      - name: Verify sitemap and feed are current
+        run: node scripts/build-feeds.js --check
 
       - id: auth
         uses: google-github-actions/auth@v2

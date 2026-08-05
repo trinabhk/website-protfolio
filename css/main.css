@@ -26,6 +26,14 @@
 
   --code-bg:  #E7E9E1;  /* inline code background                  */
   --code-ink: inherit;  /* inline code text - follows surrounding copy */
+
+  --band-bg:     #15171C;  /* dark CTA band surface                   */
+  --band-ink:    #F3F4F0;  /* band heading text                       */
+  --band-ink-soft: #B9BCC2;/* band body text                          */
+  --metabar-bg:  #15171C;  /* HTTP status bar atop the meta panel     */
+  --shadow-card: rgba(21,23,28,.35);   /* card hover lift            */
+  --glow:        rgba(20,121,78,.45);  /* pulsing status dot          */
+  --glow-out:    rgba(20,121,78,0);    /* ...faded, for the keyframe  */
 }
 
 * { box-sizing: border-box; }
@@ -110,13 +118,13 @@ a { color: inherit; text-decoration: none; }
   background: var(--index);
   display: inline-block;
   position: relative;
-  box-shadow: 0 0 0 0 rgba(20,121,78,.5);
+  box-shadow: 0 0 0 0 var(--glow);
   animation: pulse 2.6s var(--ease) infinite;
 }
 @keyframes pulse {
-  0%   { box-shadow: 0 0 0 0 rgba(20,121,78,.45); }
-  70%  { box-shadow: 0 0 0 7px rgba(20,121,78,0); }
-  100% { box-shadow: 0 0 0 0 rgba(20,121,78,0); }
+  0%   { box-shadow: 0 0 0 0 var(--glow); }
+  70%  { box-shadow: 0 0 0 7px var(--glow-out); }
+  100% { box-shadow: 0 0 0 0 var(--glow-out); }
 }
 @media (prefers-reduced-motion: reduce) { .dot { animation: none; } }
 
@@ -243,7 +251,7 @@ a { color: inherit; text-decoration: none; }
 .meta-bar {
   display: flex; align-items: center; gap: .55rem;
   padding: .65rem .95rem;
-  background: #15171C; color: #F3F4F0;
+  background: var(--metabar-bg); color: var(--band-ink);
   font-size: .7rem; letter-spacing: .1em; text-transform: uppercase;
 }
 .meta-bar .req { color: #9fb8ab; }
@@ -268,11 +276,12 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
   background-size: 24px 24px;
   scroll-snap-align: start;
   cursor: grab;
-  touch-action: none;
+  /* pan-y, not none: native touch scrolling has to keep working across a
+     full-viewport section. The drag-to-dismiss is a pointer flourish on top. */
+  touch-action: pan-y;
   user-select: none;
-  will-change: transform;
 }
-.welcome.dragging { cursor: grabbing; }
+.welcome.dragging { cursor: grabbing; will-change: transform; }
 .welcome a, .welcome button { cursor: pointer; }
 .welcome-scroll {
   position: absolute; left: 50%; bottom: clamp(1.5rem, 4vh, 3rem);
@@ -287,12 +296,12 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
 
 /* staggered entrance: the observer still just toggles .in on the parent;
    children fade up in sequence instead of all at once */
-.welcome-inner.reveal { opacity: 1; transform: none; }
-.welcome-inner > * {
+html.js .welcome-inner.reveal { opacity: 1; transform: none; }
+html.js .welcome-inner > * {
   opacity: 0; transform: translateY(14px);
   transition: opacity .65s var(--ease), transform .65s var(--ease);
 }
-.welcome-inner.in > * { opacity: 1; transform: none; }
+html.js .welcome-inner.in > * { opacity: 1; transform: none; }
 .welcome-inner > *:nth-child(1) { transition-delay: .05s; }
 .welcome-inner > *:nth-child(2) { transition-delay: .2s; }
 .welcome-inner > *:nth-child(3) { transition-delay: .34s; }
@@ -300,7 +309,7 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
 .welcome-inner > *:nth-child(5) { transition-delay: .62s; }
 .welcome-inner > *:nth-child(6) { transition-delay: .76s; }
 @media (prefers-reduced-motion: reduce) {
-  .welcome-inner > * { transition: none; opacity: 1; transform: none; }
+  html.js .welcome-inner > * { transition: none; opacity: 1; transform: none; }
 }
 
 .welcome-photo-wrap {
@@ -423,7 +432,7 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
   border-radius: var(--radius); padding: 1.6rem 1.5rem;
   transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
 }
-.card:hover { transform: translateY(-4px); border-color: var(--line); box-shadow: 0 14px 34px -22px rgba(21,23,28,.35); }
+.card:hover { transform: translateY(-4px); border-color: var(--line); box-shadow: 0 14px 34px -22px var(--shadow-card); }
 .card .num { font-family: var(--mono); font-size: .72rem; color: var(--index-dim); letter-spacing: .1em; }
 .card h3 { font-family: var(--display); font-weight: 500; font-size: 1.22rem; letter-spacing: -.01em; margin: .7rem 0 .55rem; }
 .card p { color: var(--ink-soft); font-size: .96rem; margin: 0; }
@@ -460,12 +469,12 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
    Dark CTA band
    ============================================================ */
 .band {
-  background: #15171C; color: #F3F4F0;
+  background: var(--band-bg); color: var(--band-ink);
   border-radius: var(--radius); padding: clamp(2.2rem, 5vw, 3.4rem);
   display: grid; grid-template-columns: 1fr auto; gap: 1.6rem; align-items: center;
 }
 .band h2 { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem,3.4vw,2.4rem); letter-spacing: -.02em; margin: 0 0 .6rem; }
-.band p { color: #b9bcc2; margin: 0; max-width: 48ch; }
+.band p { color: var(--band-ink-soft); margin: 0; max-width: 48ch; }
 .band .btn-primary { background: var(--index); }
 .band .btn-primary:hover { background: #18a169; }
 @media (max-width: 700px){ .band { grid-template-columns: 1fr; } }
@@ -556,12 +565,51 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
 @media (max-width: 620px){ .foot-grid { grid-template-columns: 1fr; gap: 1.6rem; } }
 
 /* ---------- scroll reveal ---------- */
-.reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
-.reveal.in { opacity: 1; transform: none; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; transition: none; } }
+/* Scroll reveal is gated on html.js, which the inline head script sets. If the
+   script never runs - blocked, failed, disabled - nothing is ever hidden, so
+   the page reads in full instead of going blank waiting for a class. */
+html.js .reveal { opacity: 0; transform: translateY(16px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+html.js .reveal.in { opacity: 1; transform: none; }
+@media (prefers-reduced-motion: reduce) { html.js .reveal { opacity: 1; transform: none; transition: none; } }
 
 .mt-0 { margin-top: 0; }
 .center { text-align: center; }
+
+/* ============================================================
+   Skip link - first tab stop, only visible once focused
+   ============================================================ */
+.skip-link {
+  position: fixed; top: 0; left: 50%; z-index: 100;
+  transform: translate(-50%, -120%);
+  background: var(--panel); color: var(--ink);
+  border: 1px solid var(--index); border-top: 0;
+  border-radius: 0 0 9px 9px;
+  padding: .6rem 1.1rem;
+  font-family: var(--mono); font-size: .76rem; letter-spacing: .06em;
+  transition: transform .18s var(--ease);
+}
+.skip-link:focus { transform: translate(-50%, 0); }
+@media (prefers-reduced-motion: reduce) { .skip-link { transition: none; } }
+
+/* ============================================================
+   Print - a portfolio gets printed and PDF'd; strip the chrome
+   ============================================================ */
+@media print {
+  .site-head, .crawl-progress, .skip-link, .welcome-scroll,
+  .theme-toggle, .nav-toggle, .head-cta, .site-foot .foot-grid { display: none; }
+  body { background: #fff; color: #000; font-size: 11pt; }
+  body::after { display: none; } /* paper grain */
+  html.js .reveal, html.js .welcome-inner > * { opacity: 1; transform: none; }
+  .welcome { min-height: auto; padding: 1.5rem 0; background-image: none; }
+  .section, .page-head { padding: 1.2rem 0; border-top-color: #ccc; }
+  .band { background: transparent; color: #000; border: 1px solid #999; }
+  .band p { color: #333; }
+  .band .btn { display: none; }
+  .card, .row, .meta-panel, .faq-item { break-inside: avoid; }
+  .card:hover, .row:hover { transform: none; box-shadow: none; padding-left: 0; }
+  .prose a::after { content: " (" attr(href) ")"; font-size: .85em; color: #555; }
+  .faq-item[open] p, .faq-item p { display: block; }
+}
 
 /* ============================================================
    Dark Mode - system preference (progressive enhancement, no JS
@@ -581,6 +629,13 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
     --signal:     #E55F2D;  /* brighter orange-clay for warnings */
     --code-bg:    #1B212D;
     --code-ink:   var(--index-dim);
+    /* the band and meta bar are near-black in light mode; on a dark page they
+       have to move *up* off the base or they vanish into it */
+    --band-bg:     #1E2634;
+    --metabar-bg:  #232B3A;
+    --shadow-card: rgba(0,0,0,.6);
+    --glow:        rgba(28,184,117,.4);
+    --glow-out:    rgba(28,184,117,0);
   }
 }
 
@@ -598,5 +653,10 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
   --signal:     #E55F2D;
   --code-bg:    #1B212D;
   --code-ink:   var(--index-dim);
+  --band-bg:     #1E2634;
+  --metabar-bg:  #232B3A;
+  --shadow-card: rgba(0,0,0,.6);
+  --glow:        rgba(28,184,117,.4);
+  --glow-out:    rgba(28,184,117,0);
 }
 

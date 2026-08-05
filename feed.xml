@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Trinabh Karki - Writing</title>
+    <link>https://trinabh.com.np/blog/</link>
+    <description>Practical technical SEO notes - indexing, crawlability, sitemaps, and SEO for businesses in Nepal.</description>
+    <language>en</language>
+    <copyright>Trinabh Karki</copyright>
+    <managingEditor>karkitrinabh30@gmail.com (Trinabh Karki)</managingEditor>
+    <webMaster>karkitrinabh30@gmail.com (Trinabh Karki)</webMaster>
+    <lastBuildDate>Wed, 05 Aug 2026 09:00:00 +0545</lastBuildDate>
+    <atom:link href="https://trinabh.com.np/feed.xml" rel="self" type="application/rss+xml"/>
+    <item>
+      <title>What Is SEO? A Straight Answer From an SEO Analyst</title>
+      <link>https://trinabh.com.np/blog/what-is-seo/</link>
+      <guid isPermaLink="true">https://trinabh.com.np/blog/what-is-seo/</guid>
+      <pubDate>Sat, 01 Aug 2026 09:00:00 +0545</pubDate>
+      <description>A practical, jargon-free explanation of search engine optimization - how it works, its three layers, and why it matters.</description>
+      <atom:updated>2026-08-05T09:00:00+05:45</atom:updated>
+    </item>
+    <item>
+      <title>SEO in Nepal: What Actually Works for Local Businesses</title>
+      <link>https://trinabh.com.np/blog/seo-in-nepal/</link>
+      <guid isPermaLink="true">https://trinabh.com.np/blog/seo-in-nepal/</guid>
+      <pubDate>Sat, 01 Aug 2026 09:00:00 +0545</pubDate>
+      <description>How Nepali businesses search, get found online, and the technical mistakes that cost them rankings.</description>
+      <atom:updated>2026-08-05T09:00:00+05:45</atom:updated>
+    </item>
+    <item>
+      <title>A technical SEO audit checklist I actually use</title>
+      <link>https://trinabh.com.np/blog/technical-seo-audit-checklist/</link>
+      <guid isPermaLink="true">https://trinabh.com.np/blog/technical-seo-audit-checklist/</guid>
+      <pubDate>Tue, 16 Jun 2026 09:00:00 +0545</pubDate>
+      <description>The exact order I work through a site when something isn&apos;t ranking - from crawlability and indexing down to sitemaps and status codes - and why sequence matters.</description>
+      <atom:updated>2026-08-05T09:00:00+05:45</atom:updated>
+    </item>
+  </channel>
+</rss>

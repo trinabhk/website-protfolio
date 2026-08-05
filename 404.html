@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<script>(function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){document.documentElement.setAttribute('data-theme',t);}}catch(e){}})();</script>
+<script>(function(){var r=document.documentElement;r.classList.add('js');try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark'){r.setAttribute('data-theme',t);}}catch(e){}})();</script>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#F3F4F0" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0C0E12" media="(prefers-color-scheme: dark)">
 <title>404 Page Not Found | Trinabh Karki</title>
 <meta name="robots" content="noindex, follow">
 <link rel="icon" href="/favicon.ico" sizes="any">
@@ -14,6 +16,7 @@
 <link rel="stylesheet" href="/css/main.css">
 </head>
 <body>
+<a class="skip-link" href="#main">Skip to content</a>
 
 <header class="site-head">
   <div class="wrap head-inner">
@@ -37,7 +40,7 @@
   </div>
 </header>
 
-<main>
+<main id="main">
   <section class="page-head center" style="padding: 5.5rem 0 1rem;">
     <div class="wrap" style="max-width: 600px;">
       <p class="eyebrow" style="justify-content:center"><span class="token"><span class="slash">/</span> status 404</span></p>

@@ -4,38 +4,68 @@
   var toggle = document.querySelector('.theme-toggle');
   if (!toggle) return;
 
+  var media = window.matchMedia ? window.matchMedia('(prefers-color-scheme: dark)') : null;
+
   function systemPref() {
-    return window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+    return media && media.matches ? 'dark' : 'light';
   }
   function currentTheme() {
     return root.getAttribute('data-theme') || systemPref();
   }
+  function reflect(theme) {
+    toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+  }
   function applyTheme(theme) {
     root.setAttribute('data-theme', theme);
-    toggle.setAttribute('aria-pressed', theme === 'dark' ? 'true' : 'false');
+    reflect(theme);
     try { localStorage.setItem('theme', theme); } catch (e) {}
   }
 
-  toggle.setAttribute('aria-pressed', currentTheme() === 'dark' ? 'true' : 'false');
+  reflect(currentTheme());
   toggle.addEventListener('click', function () {
     applyTheme(currentTheme() === 'dark' ? 'light' : 'dark');
   });
+
+  // Follow the OS while the visitor hasn't made an explicit choice
+  if (media && media.addEventListener) {
+    media.addEventListener('change', function () {
+      var stored = null;
+      try { stored = localStorage.getItem('theme'); } catch (e) {}
+      if (stored !== 'light' && stored !== 'dark') { reflect(systemPref()); }
+    });
+  }
 })();
 
 // Mobile nav toggle
 (function () {
   var head = document.querySelector('.site-head');
   var btn = document.querySelector('.nav-toggle');
-  if (btn && head) {
-    btn.addEventListener('click', function () {
-      var open = head.classList.toggle('open');
-      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
-    });
+  if (!head || !btn) return;
+
+  function isOpen() { return head.classList.contains('open'); }
+  function setOpen(open) {
+    head.classList.toggle('open', open);
+    btn.setAttribute('aria-expanded', open ? 'true' : 'false');
   }
 
-  // Scroll reveal
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  btn.addEventListener('click', function () { setOpen(!isOpen()); });
+
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape' && isOpen()) { setOpen(false); btn.focus(); }
+  });
+
+  document.addEventListener('click', function (e) {
+    if (isOpen() && !head.contains(e.target)) { setOpen(false); }
+  });
+})();
+
+// Scroll reveal - kept separate so a failure here can't strand the nav, and a
+// failure in the nav can't leave every .reveal element stuck at opacity 0
+(function () {
   var items = document.querySelectorAll('.reveal');
+  if (!items.length) return;
+
+  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
   if (reduce || !('IntersectionObserver' in window)) {
     items.forEach(function (el) { el.classList.add('in'); });
     return;
@@ -48,7 +78,9 @@
   items.forEach(function (el) { io.observe(el); });
 })();
 
-// Drag-to-dismiss the welcome slide: press and slide up to reveal the rest of the page
+// Drag-to-dismiss the welcome slide: press and slide up to reveal the rest of
+// the page. Touch keeps native scrolling (touch-action: pan-y), so on a phone
+// the browser wins the gesture and this quietly stands down.
 (function () {
   var welcome = document.querySelector('.welcome');
   var target = document.getElementById('proof');
@@ -143,9 +175,17 @@
   var fmt = new Intl.DateTimeFormat('en-GB', {
     timeZone: 'Asia/Kathmandu', hour: '2-digit', minute: '2-digit', second: '2-digit', hour12: false
   });
+  var timer = null;
+
   function tick() { el.textContent = fmt.format(new Date()) + ' NPT'; }
-  tick();
-  setInterval(tick, 1000);
+  function start() { if (!timer) { tick(); timer = setInterval(tick, 1000); } }
+  function stop() { if (timer) { clearInterval(timer); timer = null; } }
+
+  start();
+  // No point ticking a clock nobody is looking at
+  document.addEventListener('visibilitychange', function () {
+    if (document.hidden) { stop(); } else { start(); }
+  });
 })();
 
 // For anyone reading the source
