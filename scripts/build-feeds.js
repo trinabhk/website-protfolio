@@ -21,11 +21,13 @@ const CHECK = process.argv.includes('--check');
 // Static pages. `changefreq`/`priority` are ignored by Google but harmless and
 // still read by some other crawlers, so they stay.
 const PAGES = [
-  { file: 'index.html',        url: '/',          changefreq: 'monthly', priority: '1.0' },
-  { file: 'about/index.html',  url: '/about/',    changefreq: 'monthly', priority: '0.8' },
+  { file: 'index.html', url: '/', changefreq: 'monthly', priority: '1.0' },
+  { file: 'about/index.html', url: '/about/', changefreq: 'monthly', priority: '0.8' },
   { file: 'services/index.html', url: '/services/', changefreq: 'monthly', priority: '0.9' },
+  { file: 'technical-seo-nepal/index.html', url: '/technical-seo-nepal/', changefreq: 'monthly', priority: '0.9' },
+  { file: 'seo-audit-nepal/index.html', url: '/seo-audit-nepal/', changefreq: 'monthly', priority: '0.9' },
   { file: 'projects/index.html', url: '/projects/', changefreq: 'monthly', priority: '0.8' },
-  { file: 'blog/index.html',   url: '/blog/',     changefreq: 'weekly',  priority: '0.7' },
+  { file: 'blog/index.html', url: '/blog/', changefreq: 'weekly', priority: '0.7' },
 ];
 
 // Blog posts, newest first. `published` is the authored date shown on the page;
