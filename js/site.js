@@ -60,21 +60,31 @@
 })();
 
 // Scroll reveal - kept separate so a failure here can't strand the nav, and a
-// failure in the nav can't leave every .reveal element stuck at opacity 0
+// failure in the nav can't leave every .reveal element stuck at opacity 0.
+// The homepage hero is intentionally excluded so it paints immediately.
 (function () {
-  var items = document.querySelectorAll('.reveal');
+  var items = Array.prototype.slice.call(document.querySelectorAll('.reveal')).filter(function (el) {
+    return !(el.closest && el.closest('.welcome'));
+  });
   if (!items.length) return;
 
-  var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduceMedia = window.matchMedia ? window.matchMedia('(prefers-reduced-motion: reduce)') : null;
+  var reduce = !!(reduceMedia && reduceMedia.matches);
+
   if (reduce || !('IntersectionObserver' in window)) {
     items.forEach(function (el) { el.classList.add('in'); });
     return;
   }
+
   var io = new IntersectionObserver(function (entries) {
     entries.forEach(function (e) {
-      if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
     });
   }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
+
   items.forEach(function (el) { io.observe(el); });
 })();
 

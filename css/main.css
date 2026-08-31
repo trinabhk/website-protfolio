@@ -65,6 +65,9 @@ body::after {
   background-repeat: repeat;
   background-size: 180px 180px;
 }
+@media (max-width: 760px) {
+  body::after { display: none; }
+}
 
 img { max-width: 100%; display: block; }
 
@@ -294,22 +297,16 @@ html:has(.welcome) { scroll-snap-type: y proximity; }
 @media (prefers-reduced-motion: reduce) { .welcome-scroll { animation: none; } }
 .welcome-inner { display: flex; flex-direction: column; align-items: center; gap: 1.15rem; }
 
-/* staggered entrance: the observer still just toggles .in on the parent;
-   children fade up in sequence instead of all at once */
-html.js .welcome-inner.reveal { opacity: 1; transform: none; }
-html.js .welcome-inner > * {
-  opacity: 0; transform: translateY(14px);
-  transition: opacity .65s var(--ease), transform .65s var(--ease);
+/* The hero must be immediately readable on first paint. Do not gate it behind
+   the reveal observer or delayed opacity transitions. */
+.welcome-inner {
+  opacity: 1;
+  transform: none;
 }
-html.js .welcome-inner.in > * { opacity: 1; transform: none; }
-.welcome-inner > *:nth-child(1) { transition-delay: .05s; }
-.welcome-inner > *:nth-child(2) { transition-delay: .2s; }
-.welcome-inner > *:nth-child(3) { transition-delay: .34s; }
-.welcome-inner > *:nth-child(4) { transition-delay: .48s; }
-.welcome-inner > *:nth-child(5) { transition-delay: .62s; }
-.welcome-inner > *:nth-child(6) { transition-delay: .76s; }
-@media (prefers-reduced-motion: reduce) {
-  html.js .welcome-inner > * { transition: none; opacity: 1; transform: none; }
+.welcome-inner > * {
+  opacity: 1;
+  transform: none;
+  transition: none;
 }
 
 .welcome-photo-wrap {
