@@ -59,6 +59,45 @@ Review the mobile report and focus on:
 - layout shifts
 - slow server response
 
+### PageSpeed / Lighthouse Validation
+
+Homepage: https://trinabh.com.np/
+
+Mobile Lighthouse CLI:
+- Performance: 83
+- FCP: 3.4s
+- LCP: 3.4s
+- TBT: 0ms
+- CLS: 0
+- Speed Index: 4.3s
+
+Accessibility: 100
+Best Practices: 100
+SEO: 100
+
+Status: PASS with optimization opportunity.
+
+Notes:
+- Lighthouse CLI successfully records valid LCP and TBT metrics.
+- PageSpeed Insights web UI currently reports NO_LCP / NO_TBT during trace processing, despite Lighthouse CLI measuring LCP at 3.4s and TBT at 0ms.
+- The homepage hero was updated so above-the-fold content is immediately paintable and no longer depends on IntersectionObserver.
+- No further code changes are required specifically for the NO_LCP PSI reporting issue.
+- Future optimization can focus on reducing FCP/LCP toward <2.5s.
+
+Production status summary:
+- Google sitemap: ✅ 10 URLs
+- Bing sitemap: ✅ 10 URLs
+- Google priority URLs crawlable/indexable: ✅
+- Bing indexing requests submitted: ✅
+- Canonicals: ✅
+- Breadcrumb schema: ✅
+- CLS: ✅ 0
+- TBT: ✅ 0ms
+- Lighthouse measurements: ✅ working
+- Accessibility / Best Practices / SEO: ✅ 100
+
+At this point, stop debugging NO_LCP in the code and shift into indexing/performance monitoring rather than additional code changes.
+
 ## 5. Check canonical and robots output live
 Open the live pages and confirm:
 
