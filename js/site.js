@@ -159,15 +159,35 @@
   bar.innerHTML = '<div class="crawl-progress-bar"></div>';
   document.body.appendChild(bar);
   var fill = bar.firstChild;
+  var scrollable = 0;
+  var ticking = false;
+
+  function measureScrollable() {
+    scrollable = document.documentElement.scrollHeight - window.innerHeight;
+  }
 
   function update() {
-    var scrollable = document.documentElement.scrollHeight - window.innerHeight;
-    var pct = scrollable > 0 ? (window.scrollY / scrollable) * 100 : 0;
-    fill.style.width = Math.min(100, Math.max(0, pct)) + '%';
+    var pct = scrollable > 0 ? (window.scrollY / scrollable) : 0;
+    var clamped = Math.min(1, Math.max(0, pct));
+    fill.style.transform = 'scaleX(' + clamped + ')';
   }
+
+  function requestUpdate() {
+    if (ticking) return;
+    ticking = true;
+    window.requestAnimationFrame(function () {
+      update();
+      ticking = false;
+    });
+  }
+
+  measureScrollable();
   update();
-  window.addEventListener('scroll', update, { passive: true });
-  window.addEventListener('resize', update);
+  window.addEventListener('scroll', requestUpdate, { passive: true });
+  window.addEventListener('resize', function () {
+    measureScrollable();
+    requestUpdate();
+  });
 })();
 
 // Tab-away easter egg: the "page" reports itself gone while you're not looking
